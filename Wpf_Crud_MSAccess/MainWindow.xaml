@@ -37,6 +37,11 @@
                 FontSize="36"
                 FontWeight="Bold"
                 Foreground="Black" />
+            <Ellipse Width="144" Height="139">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/images/manseira1.png" Stretch="UniformToFill" />
+                </Ellipse.Fill>
+            </Ellipse>
             <WrapPanel>
                 <TextBlock Width="162" Text="Código :" />
                 <TextBox x:Name="txtCodigoAluno" />
