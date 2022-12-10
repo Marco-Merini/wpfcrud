@@ -163,7 +163,7 @@ namespace Wpf_Crud_MSAccess
 
         private void btnSair_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Deseja Encerrar a Aplicação ?", "Encerrar", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Deseja Sair do Aplicativo? :(", "Sair :(", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 Application.Current.Shutdown();
             }
