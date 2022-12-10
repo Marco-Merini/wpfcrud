@@ -1,0 +1,136 @@
+﻿<Window
+    x:Class="Wpf_Crud_MSAccess.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Wpf_Crud_MSAccess"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="930"
+    Height="510"
+    MinWidth="1150"
+    MinHeight="790"
+    Background="#1E90FF"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Width" Value="160" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+    </Window.Resources>
+    <DockPanel
+        Name="dockMain"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        LastChildFill="False">
+        <StackPanel Width="694" Height="762">
+            <Label
+                HorizontalAlignment="Center"
+                Content="Cadastro de Clientes"
+                FontSize="36"
+                FontWeight="Bold"
+                Foreground="Black" />
+            <WrapPanel>
+                <TextBlock Width="162" Text="Código :" />
+                <TextBox x:Name="txtCodigoAluno" />
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Nome :" />
+                <TextBox x:Name="txtNomeAluno" />
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Gênero :" />
+                <ComboBox
+                    x:Name="ddlGenero"
+                    Width="250"
+                    Margin="10"
+                    FontSize="20">
+                    <ComboBoxItem Content="Selecione o Sexo" Selector.IsSelected="True" />
+                    <ComboBoxItem Content="Masculino" />
+                    <ComboBoxItem Content="Feminino" />
+                </ComboBox>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Contato :" />
+                <TextBox x:Name="txtContato" />
+            </WrapPanel>
+            <WrapPanel Margin="3,0,0,0">
+                <TextBlock Text="Endereço :" />
+                <TextBox
+                    x:Name="txtEndereco"
+                    Width="265"
+                    Height="75"
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap" />
+            </WrapPanel>
+            <WrapPanel
+                Height="59"
+                Margin="0"
+                HorizontalAlignment="Center">
+                <Button
+                    x:Name="btnAdicionar"
+                    Width="120"
+                    Margin="5"
+                    Background="#00FF7F"
+                    Click="btnAdicionar_Click"
+                    Content="Adicionar"
+                    FontSize="25" />
+                <Button
+                    x:Name="btnEditar"
+                    Width="120"
+                    Margin="5"
+                    Click="btnEditar_Click"
+                    Content="Editar"
+                    FontSize="25" />
+                <Button
+                    x:Name="btnDeletar"
+                    Width="120"
+                    Margin="5"
+                    Background="Orange"
+                    Click="btnDeletar_Click"
+                    Content="Deletar"
+                    FontSize="25" />
+                <Button
+                    x:Name="btnCancelar"
+                    Width="120"
+                    Margin="5"
+                    Background="#FA8072"
+                    Click="btnCancelar_Click"
+                    Content="Cancelar"
+                    FontSize="25" />
+                <Button
+                    x:Name="btnSair"
+                    Width="120"
+                    Margin="5"
+                    Background="#FFF30B0B"
+                    Click="btnSair_Click"
+                    Content="Sair"
+                    FontSize="25"
+                    Foreground="Black" />
+            </WrapPanel>
+            <Label
+                Name="lblContador"
+                HorizontalAlignment="Center"
+                Content="Nenhum registro encontrado."
+                FontSize="16"
+                FontWeight="Bold"
+                Foreground="#FFE10000" />
+            <WrapPanel Margin="20" HorizontalAlignment="Center">
+                <DataGrid
+                    x:Name="dgDados"
+                    Padding="5"
+                    AutoGenerateColumns="True"
+                    Background="Black"
+                    FontSize="15"
+                    SelectionMode="Single" />
+            </WrapPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>
